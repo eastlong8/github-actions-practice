@@ -3,7 +3,7 @@ name: Docker Test
 on:
   push:
     branches:
-      - main:
+      - main
 
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
     - name: Run Flask Docker Container
       run: docker container run -d --name myflask-ac -p 8001:8001 myflask-test
 
-    - name: Test Flask spp
+    - name: Test Flask app
       run: |
         sleep 10
         curl http://127.0.0.1:8001
